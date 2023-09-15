@@ -1,3 +1,16 @@
+/*********************************************************************************
+*  WEB422 – Assignment 1
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: Shubh Jani Student ID: 153660212 Date: 15 Sep 2023
+*  Cyclic Link: https://fair-cyan-moth-wear.cyclic.app
+*
+********************************************************************************/ 
+
+
+
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
