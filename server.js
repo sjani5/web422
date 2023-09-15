@@ -10,7 +10,6 @@
 ********************************************************************************/ 
 
 
-
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -23,17 +22,12 @@ const db = new CompaniesDB();
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.json({ message: 'API Listening' });
-});
-
 const initializeDb = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log('MongoDB connection established successfully');
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
     });
@@ -42,7 +36,8 @@ const initializeDb = async () => {
   }
 };
 
-// Routes
+initializeDb();
+
 app.post('/api/companies', async (req, res) => {
   try {
     const data = req.body;
@@ -110,5 +105,3 @@ app.delete('/api/company/:name', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
-initializeDb();
