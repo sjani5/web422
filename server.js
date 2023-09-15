@@ -38,6 +38,11 @@ const initializeDb = async () => {
 
 initializeDb();
 
+app.get('/', (req, res) => {
+  res.json({ message: 'API Listening' });
+});
+
+
 app.post('/api/companies', async (req, res) => {
   try {
     const data = req.body;
